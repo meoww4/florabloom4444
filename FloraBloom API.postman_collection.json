@@ -1,0 +1,371 @@
+{
+	"info": {
+		"_postman_id": "325a5dbb-0d7c-49af-8028-da9140f7fbe1",
+		"name": "FloraBloom API",
+		"description": "Коллекция запросов для тестирования API FloraBloom по ТЗ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50789927",
+		"_collection_link": "https://mashafetrovav-2739834.postman.co/workspace/c6b7363b-86dc-4c50-8e68-d28fe9a29a9a/collection/50789927-325a5dbb-0d7c-49af-8028-da9140f7fbe1?action=share&source=collection_link&creator=50789927"
+	},
+	"item": [
+		{
+			"name": "Регистрация пользователя",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"first_name\": \"Мария\",\n  \"last_name\": \"Казакова\",\n  \"email\": \"maria2007@gmail.com\",\n  \"password\": \"maria2007\"\n}\n"
+				},
+				"url": {
+					"raw": "https://k-zenkova.xn--80ahdri7a.site/api/register",
+					"protocol": "https",
+					"host": [
+						"k-zenkova",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Авторизация пользователя",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"alex789@gmail.com\",\n  \"password\": \"admin123\"\n}"
+				},
+				"url": {
+					"raw": "https://k-zenkova.xn--80ahdri7a.site/api/login",
+					"protocol": "https",
+					"host": [
+						"k-zenkova",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение списка товаров",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://k-zenkova.xn--80ahdri7a.site/api/products",
+					"protocol": "https",
+					"host": [
+						"k-zenkova",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение товара по ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://k-zenkova.xn--80ahdri7a.site/api/products/1312321321",
+					"protocol": "https",
+					"host": [
+						"k-zenkova",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"products",
+						"1312321321"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание товара (админ)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer endSc19xDJXPL4ytn6ZRUyJs3KHiM3YI"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Букет «Мяу»",
+							"type": "text"
+						},
+						{
+							"key": "category_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "5000",
+							"type": "text"
+						},
+						{
+							"key": "imageFile",
+							"type": "file",
+							"src": "/C:/Users/mariia/Downloads/123.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://k-zenkova.xn--80ahdri7a.site/api/products",
+					"protocol": "https",
+					"host": [
+						"k-zenkova",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Редактирование товара (админ)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 5uPfwbmkobjYjS6LR3ZHWcNqXp-uYD2R"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"price\": \"8808\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://k-zenkova.xn--80ahdri7a.site/api/products/19",
+					"protocol": "https",
+					"host": [
+						"k-zenkova",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"products",
+						"19"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление товара (админ)",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 5uPfwbmkobjYjS6LR3ZHWcNqXp-uYD2R"
+					}
+				],
+				"url": {
+					"raw": "https://k-zenkova.xn--80ahdri7a.site/api/products/19",
+					"protocol": "https",
+					"host": [
+						"k-zenkova",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"products",
+						"19"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение списка категорий",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://k-zenkova.xn--80ahdri7a.site/api/categories",
+					"protocol": "https",
+					"host": [
+						"k-zenkova",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание категории (админ)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 83STAilL624HlVfu9NWRuyymfFgCKt7J"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"name\": \"Лилии\" }"
+				},
+				"url": {
+					"raw": "https://k-zenkova.xn--80ahdri7a.site/api/categories",
+					"protocol": "https",
+					"host": [
+						"k-zenkova",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание заказа (покупатель)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer jZ8mlEZYl9l6iEe1oVKADTGRsm2eY1cy"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"products\": [{\"id\": 1, \"count\": 2}, {\"id\": 3, \"count\": 1}],\n  \"address\": \"ул. Ленина, 10\",\n  \"payment_type\": \"online\"\n}"
+				},
+				"url": {
+					"raw": "https://k-zenkova.xn--80ahdri7a.site/api/orders",
+					"protocol": "https",
+					"host": [
+						"k-zenkova",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение заказов пользователя",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer endSc19xDJXPL4ytn6ZRUyJs3KHiM3YI"
+					}
+				],
+				"url": {
+					"raw": "https://k-zenkova.xn--80ahdri7a.site/api/orders",
+					"protocol": "https",
+					"host": [
+						"k-zenkova",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение заказа по ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer endSc19xDJXPL4ytn6ZRUyJs3KHiM3YI"
+					}
+				],
+				"url": {
+					"raw": "https://k-zenkova.xn--80ahdri7a.site/api/orders/1",
+					"protocol": "https",
+					"host": [
+						"k-zenkova",
+						"xn--80ahdri7a",
+						"site"
+					],
+					"path": [
+						"api",
+						"orders",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
